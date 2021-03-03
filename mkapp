@@ -1,0 +1,22 @@
+#!/bin/bash
+
+env
+
+. /usr/share/mkapp/functions
+
+if [ "$PACKAGING" ]; then  
+  rewrite
+  build -F
+
+  if [ "$PUBLISH" ]; then
+    publish_debs
+  fi
+fi
+
+if [ "$IMAGING" ]; then
+  init
+  update
+  setup log
+  finish '/opt/peramic-app' '["/opt/peramic-app/log", "-p", "80"]'
+  cat Dockerfile
+fi

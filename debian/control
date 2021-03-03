@@ -1,0 +1,8 @@
+Source: log
+Maintainer: peraMIC <opensource@peraMIC.io>
+Build-Depends: debhelper, golang:native, git, crossbuild-essential-armhf:all, libc6
+
+Package: log
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Log Service

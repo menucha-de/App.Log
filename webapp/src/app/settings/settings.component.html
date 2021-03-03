@@ -1,0 +1,43 @@
+<h3 class="title">Log Configuration</h3>
+<div class=content>
+    <div class="spinner-container   " *ngIf="loading$ | async">
+        <mat-spinner></mat-spinner>
+    </div>
+    <button mat-button class="button-icon" (click)="deleteAll()">
+        <mat-icon>delete</mat-icon>ClearAll
+    </button>
+    <mat-divider></mat-divider>
+    <mat-table [dataSource]="logConfigs$">
+        <ng-container matColumnDef="host">
+            <mat-header-cell *matHeaderCellDef>App</mat-header-cell>
+            <mat-cell *matCellDef="let log">{{log.host}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="target">
+            <mat-header-cell *matHeaderCellDef>Target</mat-header-cell>
+            <mat-cell *matCellDef="let log">{{log.target}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="level">
+            <mat-header-cell *matHeaderCellDef>Level</mat-header-cell>
+            <mat-cell *matCellDef="let log">
+                <ng-container *ngIf="log.level!=''">
+                    <mat-form-field *ngIf="levels$ | async as levels">
+                        <mat-select [(value)]="log.level"
+                            (selectionChange)="setLogLevel(log.host,log.target,log.level)">
+                            <mat-option *ngFor="let x of levels" [value]="x">{{x}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </ng-container>
+            </mat-cell>
+
+        </ng-container>
+        <ng-container matColumnDef="clear">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let log"><button mat-button (click)="deleteLogs(log.host,log.target)">
+                    <mat-icon>delete</mat-icon>
+                </button></mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+</div>

@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+ 
+%:
+	dh $@
+
+override_dh_install:
+	CC=$(PREFIX)gcc LD=$(PREFIX)ld GOSUMDB=off GOOS=linux GOARCH=$(GOARCH) GOARM=$(GOARM) CGO_ENABLED=1 go build -o target/log -ldflags="-extld=$(PREFIX)gcc" 
+	npm config set registry $(NPM_PROXY)
+	cd webapp; npm install; node_modules/@angular/cli/bin/ng build --prod --no-progress --output-path=www
+	dh_install

@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'material-icons/iconfont/material-icons.scss';
+@import "~@angular/material/theming";
+@import 'typeface-roboto/index.css';
+// Include non-theme styles for core.
+@include mat-core();
+
+
+
+$angular-material-v1-primary: mat-palette($mat-blue-grey, 600, 400, 800);
+$angular-material-v1-accent: mat-palette($mat-teal, 800, 900, 500);
+$angular-material-v1-warn: mat-palette($mat-red, 900, 500, A700);
+
+// Create the theme object (a Sass map containing all of the palettes).
+// If you prefer a dark theme, switch to mat-dark-theme and it will switch over to your darker hues
+$my-dark-theme-background: (
+  status-bar: white,
+  app-bar: white,
+  tool-bar: white,
+  background: white,
+  hover: white,
+  card: white,
+  dialog: white,
+  disabled-button: $white-12-opacity,
+  raised-button: white,
+  focused-button: #dadfe1,
+  selected-button: #dadfe1,
+  selected-disabled-button: #dadfe1,
+  disabled-button-toggle: black,
+  unselected-chip: #dadfe1,
+  disabled-list-option: black,
+);
+$my-dark-theme-foreground: (
+  base: white,
+  divider:#e0ddddde,
+  dividers: $white-12-opacity,
+  disabled: rgba(white, 0.3),
+  disabled-button: rgba(white, 0.3),
+  disabled-text: rgba(white, 0.3),
+  hint-text: rgba(white, 0.3),
+  secondary-text: #99a4ae,
+  icon: white,
+  icons: white,
+  text: #152926,
+  slider-min: #152826,
+  slider-off: #152826,
+  slider-off-active: #152826,
+);
+
+@function create-wonky-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    //is-dark: false,
+    foreground: $my-dark-theme-foreground,
+    background: $my-dark-theme-background
+  );
+}
+
+// The rest of this is like a normal theme.scss file. The only difference being that we use create-wonky-theme instead of mat-light-theme
+$custom-theme-primary: mat-palette($mat-blue-grey, 600, 400, 800);
+$custom-theme-accent: mat-palette($mat-teal, 800, 900, 500);
+$custom-theme-warn: mat-palette($mat-red);
+
+$custom-theme: create-wonky-theme(
+  $custom-theme-primary,
+  $custom-theme-accent,
+  $custom-theme-warn
+);
+$angular-material-v1-theme: create-wonky-theme(
+  $custom-theme-primary,
+  $custom-theme-accent,
+  $custom-theme-warn
+);
+@include angular-material-theme($angular-material-v1-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.toaster{
+  border: .15em solid #e5e5e5;
+    border-radius: .75em !important;
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.25) !important;
+    padding: .25em .5em;
+    background: rgba(255,255,255,.9) !important;
+    width: 900px !important;
+    max-width: none !important;
+    color:#152826 !important;
+
+  }
+  .material-icons{
+    vertical-align: middle;
+  }
+  

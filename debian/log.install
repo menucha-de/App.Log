@@ -1,0 +1,2 @@
+target/log /opt/peramic-app/
+webapp/www /opt/peramic-app/

@@ -1,0 +1,56 @@
+table {
+  width: 100%;
+}
+
+.content {
+  position: relative;
+}
+.spinner-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.spinner-container mat-spinner {
+  margin: 130px auto 0 auto;
+}
+.mat-column-level {
+  font-size: 12px;
+}
+.mat-column-date {
+  font-size: 12px;
+}
+.mat-column-service {
+  font-size: 12px;
+}
+.mat-column-host {
+  font-size: 12px;
+}
+.mat-form-field {
+  max-width: 7em;
+}
+.mat-select-trigger {
+  width: 7em;
+  font-size: 12px;
+}
+.button-icon {
+  margin-right: 100px;
+  min-width: 100px !important;
+}
+.mat-table {
+  margin-top: 10px;
+}
+.title {
+  padding-left: 24px;
+}
+
+
+.mat-row {
+  height: 32px;
+}
+.mat-row:nth-child(4n+1),
+.mat-row:nth-child(4n+2) {
+  background-color: rgba(224, 221, 221, 0.8705882353);
+}
