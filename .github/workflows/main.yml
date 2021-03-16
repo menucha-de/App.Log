@@ -16,15 +16,15 @@ on:
         description: 'Imaging'      
       maintainer:
         description: 'Maintainer'
-        default: "Open Source <opensource@peraMIC.io>"
+        default: "Menucha Team <info@menucha.de>"
         required: true
       support:
         description: 'Support'
-        default: "support@peraMIC.io"
+        default: "info@menucha.de"
         required: true
       tags:
         description: 'Tags'
-        default: 'ghcr.io/peramic/log:latest'
+        default: 'ghcr.io/menucha-de/log:latest'
         required: true
       platforms:
         description: 'Platforms'
@@ -51,7 +51,7 @@ jobs:
           password: ${{ secrets.ACTIONS }}
       - name: Build
         id: build
-        uses: peramic/actions/build@v1
+        uses: menucha-de/actions/build@v1
         with:
           arch: ${{ github.event.inputs.arch }}
           dist: ${{ github.event.inputs.dist }}

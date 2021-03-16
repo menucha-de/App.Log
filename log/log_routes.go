@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/peramic/utils"
+	"github.com/menucha-de/utils"
 )
 
 //NewRouter router constructor

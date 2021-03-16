@@ -13,9 +13,9 @@ import (
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 	"github.com/google/uuid"
-	logg "github.com/peramic/App.Log/log"
+	logg "github.com/menucha-de/App.Log/log"
 
-	"github.com/peramic/utils"
+	"github.com/menucha-de/utils"
 	"github.com/sirupsen/logrus"
 )
 

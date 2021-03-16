@@ -1,4 +1,4 @@
-module github.com/peramic/App.Log
+module github.com/menucha-de/App.Log
 
 go 1.14
 
@@ -8,8 +8,8 @@ require (
 	github.com/google/uuid v1.1.2
 	github.com/gorilla/mux v1.8.0
 	github.com/mattn/go-sqlite3 v1.14.5
-	github.com/peramic/App.Containerd v0.0.0-20210303105740-b420f6749ae8
-	github.com/peramic/utils v0.0.0-20210302153209-51de1f683749
+	github.com/menucha-de/art v0.0.0-20210315163420-52fd0de99153
+	github.com/menucha-de/utils v0.0.0-20210315113458-58b282a57797
 	github.com/sirupsen/logrus v1.7.0
 	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b // indirect
 )

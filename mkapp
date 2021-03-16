@@ -17,6 +17,6 @@ if [ "$IMAGING" ]; then
   init
   update
   setup log
-  finish '/opt/peramic-app' '["/opt/peramic-app/log", "-p", "80"]'
+  finish '/opt/menucha-de' '["/opt/menucha-de/log", "-p", "80"]'
   cat Dockerfile
 fi

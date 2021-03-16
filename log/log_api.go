@@ -15,8 +15,8 @@ import (
 
 	"github.com/gorilla/mux"
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/peramic/App.Containerd/go/containers"
-	"github.com/peramic/utils"
+	"github.com/menucha-de/art/art/containers"
+	"github.com/menucha-de/utils"
 	"github.com/sirupsen/logrus"
 )
 
