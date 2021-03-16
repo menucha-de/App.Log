@@ -8,7 +8,7 @@ on:
         default: 'amd64 armhf'
       dist:
         description: 'Distribution'
-        default: 'buster-staging'
+        default: 'buster'
         required: true
       packaging:
         description: 'Packaging'
